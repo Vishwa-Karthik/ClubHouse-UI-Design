@@ -184,8 +184,91 @@ class RoomScreen extends StatelessWidget {
                     .toList(),
               ),
             ),
+            const SliverPadding(padding: EdgeInsets.only(bottom: 100.0))
           ],
         ),
+      ),
+      bottomSheet: Container(
+        padding: const EdgeInsets.symmetric(
+          horizontal: 20.0,
+          vertical: 12.0,
+        ),
+        height: 90.0,
+        child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              //* button to leave
+              GestureDetector(
+                onTap: (() => Navigator.of(context).pop()),
+                child: Container(
+                  padding: const EdgeInsets.symmetric(
+                    vertical: 6.0,
+                    horizontal: 16.0,
+                  ),
+                  decoration: BoxDecoration(
+                    color: Colors.grey[300],
+                    borderRadius: BorderRadius.circular(24.0),
+                  ),
+                  child: const Text.rich(
+                    TextSpan(
+                      children: [
+                        TextSpan(
+                          text: '✌🏾',
+                          style: TextStyle(
+                            fontSize: 20,
+                          ),
+                        ),
+                        TextSpan(
+                          text: 'Leave Quietly',
+                          style: TextStyle(
+                            fontSize: 20,
+                            color: Colors.red,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+
+              Row(
+                children: [
+                  GestureDetector(
+                    onTap: () {},
+                    child: Container(
+                      padding: const EdgeInsets.all(6),
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: Colors.grey[300],
+                      ),
+                      child: const Icon(
+                        CupertinoIcons.add,
+                        size: 30.0,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    width: 16,
+                  ),
+                  GestureDetector(
+                    onTap: () {},
+                    child: Container(
+                      padding: const EdgeInsets.all(6),
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: Colors.grey[300],
+                      ),
+                      child: const Icon(
+                        CupertinoIcons.hand_raised,
+                        size: 30.0,
+                      ),
+                    ),
+                  ),
+                ],
+              )
+            ]),
       ),
     );
   }
